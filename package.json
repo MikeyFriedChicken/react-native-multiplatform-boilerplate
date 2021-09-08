@@ -1,5 +1,11 @@
 {
   "main": "node_modules/expo/AppEntry.js",
+  "name": "rn-multi-platform-boilerplate",
+  "description": "React Native Multiplatform Boilerplate",
+  "homepage": "/",
+  "author": "Mikey Fried Chicken",
+  "version": "1.0.1",
+  "build": "electron-builder.yml",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
