@@ -1,0 +1,33 @@
+directories:
+  output: ./dist
+  buildResources: build
+productName: MultiplatformBoilerplate
+extraMetadata:
+  main: main.js
+appId: com.rnmpbp.app
+artifactName: ${name}-${version}-${os}-${arch}${env.ARTIFACT_NAME_POSTFIX}.${ext}
+publish: null
+asar: true
+win:
+  publish: null
+  target:
+    - target: nsis
+      arch:
+        - x64
+        - ia32
+compression: store
+mac:
+  identity: null
+files:
+  - from: dist/main
+    to: ./
+    filter:
+      - '**/*'
+  - from: dist/renderer
+    to: ./
+    filter:
+      - '**/*'
+  - filter:
+      - package.json
+      - '**/node_modules/**/*'
+electronVersion: 6.1.12
