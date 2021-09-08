@@ -1,9 +1,28 @@
 import * as React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import { RootStackScreenProps } from '../types';
 
 export default function NotFoundScreen({ navigation }: RootStackScreenProps<'NotFound'>) {
+
+  const [url, setUrl] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    const getInitialURL = async () => {
+      const initialUrl = await Linking.getInitialURL();
+      if (initialUrl?.endsWith('index.html')) {
+        navigation.navigate('Root');
+      } else {
+        setUrl(initialUrl);
+      }
+    }
+    getInitialURL();
+  });
+
+  if (!url) {
+    return <View>Loading...</View>;
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>This screen doesn't exist.</Text>
