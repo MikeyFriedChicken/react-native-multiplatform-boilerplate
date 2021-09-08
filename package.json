@@ -22,7 +22,6 @@
     "@react-navigation/bottom-tabs": "^6.0.5",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
-    "electron": "^6.0.12",
     "expo": "~42.0.1",
     "expo-asset": "~8.3.2",
     "expo-constants": "~11.0.1",
@@ -46,6 +45,7 @@
     "@expo/webpack-config": "^0.15.0",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
+    "electron": "6.1.12",
     "electron-builder": "^22.11.7",
     "jest-expo": "~41.0.0-beta.0",
     "typescript": "~4.0.0"
